@@ -1,4 +1,4 @@
-# phys742-2019
+# 742Notes2019
 
 LateX lecture notes from Phys 742 in 2019.
 
