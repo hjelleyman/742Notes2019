@@ -28,7 +28,7 @@ If two systems are each in thermal equilibrium with a third system, then they ar
 
 It is worth noting that thermal equilibrium is not the same as thermodynamic equilibrium. For the latter we also need mechanical equilibrium ($p_1=p_2$ --- there are no unbalanced forces) and chemical equilibrium ($\mu_1=\mu_2$ --- equal rates of reaction).
 
-\subsection{The first Law:}
+\subsection{The first law:}
 Heat and work are both forms of energy. The first law of thermodynamics says that energy remains constant for a (collection of) system(s) isolated from their surroundings. We denote work done \emph{on} the system by the surroundings as $W>0$, similarly, heat supplied to the system is denoted $Q>0$.)
 
 When considering the change in energy $\Delta E$ of a system it is necessary to consider both work and heat. For example, if system $A$ gains energy from system $B$, $\Delta E_A = -\Delta E_B \implies \Delta E_A + \Delta E_B =0$. Since, in general, $\Delta E_A\neq W_{B\rightarrow A}$ there will also be a heat flow $Q_{B\rightarrow A}$, due to a temperature difference between systems $A$ and $B$.
@@ -98,9 +98,9 @@ We can now write $C_p = \frac{\partial E}{\partial T}\vert_{p} + \alpha_p pV$.
 
 We can also find an expression for $C_p$ without resorting to introducing thermal expansivity. Constant pressure implies that $\mathrm{d}(pV)=p\mathrm{d}V$ so that $\delta Q = dE - dW = dE +pdV = d(E+pV)$. We define the composite quantity $E+pV$ as \emph{enthalpy}, $H$.
 
-The infinitesimal for enthalpy is $dH = \underbrace{dE +pdV}_{\delta Q}+ Vdp = \delta Q + VdP\vert_{p}$. In the constant pressure case, the last term is zero, so we get 
+The infinitesimal for enthalpy is $dH = \underbrace{dE +pdV}_{\delta Q}+ Vdp = \delta Q + Vdp\vert_{p}$. In the constant pressure case, the last term is zero, so we get 
 $$
-	C_p = \frac{\delta Q}{\partial T}\bigg\vert_{p} = \frac{\partial H}{\partial T}\bigg\vert_{P}. 
+	C_p = \frac{\delta Q}{\partial T}\bigg\vert_{p} = \frac{\partial H}{\partial T}\bigg\vert_{p}. 
 $$
 
 
@@ -149,7 +149,7 @@ so $\frac{\partial S^1}{\partial E^1}\vert_{E^1_{eq}} = \frac{\partial S^2}{\par
 Where does the heat in flow to in the system? The system started in an initial state with $E = E^1_{in}+E^2_{in}$. Since entropy increases to reach the maximum  value at equilibrium we have $S^1(E^1_{eq}) + S^2(E^2_{eq}) \geq S^1(E^1_{in}) + S^2(E^2_{in})$, i.e. $ S^1(E^1_{in}) - S^1(E^1_{eq})  +  S^2(E^2_{in}) - S^2(E^2_{eq}\geq 0$.
 
 The convexity property of entropy means that both systems have $S(E_{eq})-S(E_{in})\leq \frac{\partial S}{\partial E}\vert_{E_{in}}(E_{eq}-E_{in})$ and from the previous expression, the LHS of the inequality is bounded below by zero so we have
-$$\frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1_{in}}(E_{eq}^1-E_{in}^1) + \frac{\partial S^2}{\partial E^2}\bigg\vert_{E^2_{in}}(\underbrace{E-E_{eq}^1}_{=E^2_{eq}}-E_{in}^2).$$
+$$\frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1_{in}}(E_{eq}^1-E_{in}^1) + \frac{\partial S^2}{\partial E^2}\bigg\vert_{E^2_{in}}(\underbrace{E-E_{eq}^1}_{=E^2_{eq}}-E_{in}^2)>0$$
 
 But $E$ is conserved so $E=E^1_{in}+E^2_{in}$ so we have $E-E^1_{eq}-E^2_{in} = -(E^1_{eq}-E^1_{in})$ and therefore
 $$\left[\frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1_{in}} - \frac{\partial S^2}{\partial E^2}\bigg\vert_{E^2_{in}}\right]\left(E^1_{eq}-E^1_{in}\right)\geq 0.$$
