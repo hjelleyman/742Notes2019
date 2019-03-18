@@ -4,3 +4,6 @@
 *.out
 *.log
 *.swp
+*.bbl
+*.blg
+*synctex*
