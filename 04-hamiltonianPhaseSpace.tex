@@ -24,11 +24,11 @@ where
 $$
 	J = 
 	\begin{bmatrix}
-		0 & -Id\\
-		Id & 0
+		0 & -\mathbb{I}_d\\
+		\mathbb{I}_d & 0
 	\end{bmatrix}.
 $$
-($Id$ is the identity matrix of dimension $d$.)
+($\mathbb{I}_d$ is the identity matrix of dimension $d$.)
 
 Given a Hamiltonian, H, and a suitable set of initial conditions ${\bf x}_0$, the evolution of the solution ${\bf x}(t)$ can be quite complicated (Hamiltonian systems are one of the archetypal systems for studying chaotic dynamics). However, the fact that the system is Hamiltonian provides us with some additional information that can help us characterise the state of the system. For example, it is not hard to prove that a solution ${\bf x}(t)$ that satisfies $\dot{\bf x} = f({\bf x}) = J^{-1}\nabla H({\bf x}),$ ${\bf x}_0 = {\bf x}(0)$ has $H({\bf x}(t)) = H({\bf x}_0)= const.$ That is, Hamiltonian systems conserve energy along their solutions. We identify the Hamiltonian $H$ with the internal energy of the system.
 
