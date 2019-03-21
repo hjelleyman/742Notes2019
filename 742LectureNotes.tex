@@ -3,6 +3,12 @@
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+\geometry{margin=1in}
+\newcommand{\sectionbreak}{\clearpage}
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -16,7 +22,9 @@
 \author{Dion O'Neale}
 \begin{document}
 \maketitle
+\newpage
 \tableofcontents
+\newpage
 
 \input{01-thermodynamicsRefresher.tex}
 \input{02-probability.tex}
