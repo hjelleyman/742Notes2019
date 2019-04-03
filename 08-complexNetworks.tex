@@ -124,6 +124,9 @@ One popular generative network model is the \emph{preferential attachment plus g
 
 As the name suggests, at each time step, the PAPG model adds a node with degree $m$. Each of the edges of the new node attaches itself to a node in the existing network with a probability that is proportionate to the degree of the existing nodes. The edges in this model are undirected and once and edge is attached to a node, there is no re-wiring. It isn't too hard to prove that the PAPG model generates graphs with a power law degree distribution with $p_k \sim k^{-3}$. The fact that the power law exponent is fixed is unfortunate, though generalisation of the PAPG model allow for different exponents. It is also not hard to see that the PAPG model only produces connected graphs. This limits its applicability to some real world networks. Even though the PAPG model manages to grow networks that reproduce some real-world features (the power-law degree distribution), it does so in a way that may not match up with the growth processes of those real-world networks. For example the highest degree nodes of the PAPG model are the oldest nodes --- this is not the case with networks such as the WWW to which the PAPG model might be applied.
 
+\subsubsection{Recommended reading on growth models}
+See the lecture notes by Aaron Clauset on network growth models PDF in the files section of Canvas (not in the reading list).
+
 \subsection{Probability Generating Functions \& Networks}
 The probability generating functions that we introduced at the start of the course give a useful way of calculating network properties from their degree distributions. For example, if $G_0(x) = \sum_{k=0}^\infty p_kx^k$ is the PGF for the degree distribution of a network, then the first moment of the PGF gives the average degree, $\langle k \rangle$, of the network, according to
 $$
