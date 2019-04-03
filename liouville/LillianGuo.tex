@@ -1,0 +1,17 @@
+\subsection{By Lillian Guo}
+
+Liouville's theorem states that in a Hamiltonian system, the volume in a phase space defined by canonical variables $(q_1, ..., q_n, p_1, ..., p_n)$ is conserved by the flow, or equivalently, that the phase space distribution function $\rho({\bf p}, {\bf q}, t)$ (where ${\bf p} = (p_1, ..., p_n)$) is constant along trajectories. This allows us to discretise a continuous classical system into bins of uniform intervals of position and momenta, and associate microstates with such bins (whose volumes remain constant in time), allowing a statistical description of the system. By the postulate of equal a priori probabilities upon which equilibrium statistical mechanics is based, microstates corresponding to the same energy and composition of a system are equally probable. Since the phase space distribution function, which describes the probability to find the system in various microscopic states, stays constant as the system evolves under the Hamiltonian, Liouville's theorem assures us that the postulate holds at all times as long as it holds initially. Moreover, the theorem also assures that macroscopic quantities associated with the phase space volume such as entropy via $S = k_B \ln(\Omega)$ remain smooth.\par 
+
+Liouville's theorem also aids in calculating macroscopic properties from microscopic quantities of the system. In a Hamiltonian system the time evolution of any function of canonical variables $f({\bf p}, {\bf q}, t)$ can be written as
+\begin{equation}
+\frac{df}{dt} = \frac{\partial f}{\partial t} + \{f, H\},
+\end{equation}
+with
+\begin{equation}
+\{f, H\} = \sum_{j=1}^n \left( \frac{\partial f}{\partial q_j} \frac{\partial H}{\partial p_j} - \frac{\partial f}{\partial p_j} \frac{\partial H}{\partial q_j}\right)
+\end{equation}
+the Poisson bracket and $n$ the number of degrees of freedom. The time evolution of phase space distribution function $\rho({\bf p}, {\bf q}, t)$ therefore can also be written this way. By Liouville's theorem, $\frac{d}{dt} \rho({\bf p}, {\bf q}, t) =0$. Now consider the system at equilibrium, which has $\frac{\partial \rho}{\partial t} = 0$. Then as a consequence of Liouville's theorem, $\{\rho, H\} = 0$, i.e. the phase space distribution function is of form $\rho(H(p, q))$. Integrating this over the phase space gives the partition function 
+\begin{equation*}
+\mathcal{Z} = \int  \rho(H(p, q))d^n p d^n q,
+\end{equation*}
+which allows calculation of all thermodynamic quantities.\par
