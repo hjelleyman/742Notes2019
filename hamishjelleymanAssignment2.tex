@@ -1,0 +1,35 @@
+\subsection{Quantifying Casual Coupling Strength\\{\small A Lag-specific Measure for Multivariate Time Series Related to Transfer Entropy\\
+By Hamish Jelleyman}}
+Our key problem is this, that we find ourselves encountering systems which have a number of variables changing over time. Take our system of seven argon atoms for instance. Here we have different variables, such as Temperature, Energy or the movement of each atom. If we look at systems like these, we want to ask ourselves, how does each variable changing affect the others? In the system of argon atoms, we can relate the positions and velocities of the atoms to the energy and temperature of the overall system. But what then, if we don’t understand the underlying processes, or only know the behaviour of some of the variables. \medskip
+
+If we look at the system evolving over time, are we able to make claims about the casual nature of such variables? And perhaps, more importantly, are we able to meaningfully describe the strength of these relationships? It turns out this is possible using a method known as Momentary Information Transfer.\medskip
+
+To understand this process, I need to introduce you to some concepts from information theory. The first one will probably be familiar to you. Entropy in information theory is a measure of how much uncertainty there is in a measurement. 
+
+\begin{align*}
+H(Y)\equiv&\,
+\text{How much information is missing to}\\
+&\text{ determine the exact state of Y.}\\
+&\text{i.e. the uncertainty in Y.}
+\end{align*}
+
+If we think about this in the context of statistical mechanics, which is an application of information theory entropy, we see that entropy is how much more information you need when you know a macro-state of a system to determine which micro-state you have. The more microstates the system has, the larger the entropy.\medskip
+
+Let’s take a process which changes over time, say the temperature of our system of seven argon atoms. It has a value at each time point, which can be predicted with some uncertainty by looking at its past. This uncertainty is what we will consider to be the entropy for this process. Now if we introduce a second process in the same system, say the total energy of the system. These processes are probably related, and we can see this in the transfer entropy from the energy to the temperature. Transfer entropy can be calculated by looking at the reduction in entropy of a process Y when learning the past of X, where the past for all the other known processes is already considered.
+
+\begin{align*}
+I^{TE}_{X\rightarrow Y}\equiv&\text{The reduction in entropy of $Y_t$ when}\\
+&\text{ learning the past of X, where the past for}\\
+&\text{ all the other processes are already known.}
+\end{align*}
+
+Momentary information transfer is a process used to meaningfully link two timeseries data together. It is based off Transfer Entropy but takes into account the parent processes for each time point. Parent processes being the processes which have a effect on a given process.
+
+\begin{align*}
+E^{MIT}_{X\rightarrow Y}\equiv&\,
+\text{\textbf{The reduction in entropy of $Y_t$,}}\\
+&\text{\small given its parent processes,}\\
+&\text{ \textbf{by the process $X_{t-\tau}$,}}\\
+&\text{\small given its parent processes.}
+\end{align*}
+By considering how the past of $X$ with different time lags $\tau$ reduces the entropy of $Y$ at each time point $t$, we can develop an algorithm to identify how much the uncertainty in the value of $Y$ at $t$ decreases. This provides us with a meaningful measure for how strongly $X$ potentially causes $Y$.
