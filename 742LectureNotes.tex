@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[final]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
@@ -7,6 +7,13 @@
 \usepackage{booktabs}
 \usepackage{float}
 
+\usepackage{geometry}
+\usepackage{listings}
+
+\lstset{breaklines = true, showstringspaces=fals}
+
+\graphicspath{{images/}}
+
 \geometry{margin=1in}
 \newcommand{\sectionbreak}{\clearpage}
 
@@ -14,8 +21,10 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
+    citecolor=magenta,
     filecolor=magenta,      
-    urlcolor=blue,}
+    urlcolor=blue,
+    final}
     
 \begin{document}
 \newcommand{\calG}{\mathcal{G}}
@@ -39,19 +48,20 @@
 
 \section{Student notes on Liouville's theorem - assignment one}
 \input{liouville/juliettesoule.tex}
-\input{liouville/hamishjelleyman}
+\input{liouville/hamishjelleyman.tex}
 \input{liouville/LillianGuo.tex}
 \input{liouville/seanrichards.tex}
 \input{liouville/eliaspaknejad.tex}
 \input{liouville/dianayu.tex}
 \input{liouville/ryanstickland.tex}
-\input{juliettesoulea2.tex}
 
-
-\subsection{Assignment 2}
-\input{hamishjelleymanAssignment2}
-
-\subsection{Student Journal reviews - assignment two}
+\section{Student Journal reviews - assignment two}
 \input{journals/seanrichards.tex}
+\input{journals/hamishjelleyman}
+\input{journals/juliettesoule.tex}
+\input{journals/LillianGuo.tex}
+
+\bibliographystyle{plain}
+\bibliography{GlobalReferences.bib}
 
 \end{document}
