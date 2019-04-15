@@ -6,16 +6,43 @@
 \usepackage{titlesec}
 \usepackage{booktabs}
 \usepackage{float}
-
+\usepackage{lastpage}
+\usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{listings}
+\usepackage{xcolor}
+\usepackage{varioref}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+
+\newtcbox{\mathbox}[1][]{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=blue!30!black,
+    colback=blue!30, boxrule=1pt,
+    #1}
 
 \lstset{breaklines = true, showstringspaces=fals}
+
+\numberwithin{equation}{section}
+
+\renewcommand{\footrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\nouppercase{\rightmark}}
+\fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref*{LastPage}}
 
 \graphicspath{{images/}}
 
 \geometry{margin=1in}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+
 \newcommand{\sectionbreak}{\clearpage}
+\definecolor{HeadColor}{HTML}{376092}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -28,11 +55,22 @@
     
 \begin{document}
 \newcommand{\calG}{\mathcal{G}}
-\title{Physics 742: \\
-	Statistical Mechanics \& Condensed Matter\\
-	Notes from Dion's content - statistical mechanics and complex networks}
-\author{Dion O'Neale}
-\maketitle
+
+\begin{titlepage}
+    \begin{center}
+        \begin{center}
+            \includegraphics[width=\textwidth]{UOA_Science.png}
+        \end{center}
+        \vfill
+        \line(1,0){400}\\[1mm]
+        \huge{\textbf{Physics 742 Lecture Notes}}\\
+        \Large{\color{HeadColor}{Statistical Mechanics \& Complex Networks}}\\
+        Dion O'Neale\\
+        \line(1,0){400}\\[3mm]
+        \vfill
+        \large{\textsc{The University of Auckland}}
+    \end{center}
+\end{titlepage}
 \newpage
 \tableofcontents
 \newpage

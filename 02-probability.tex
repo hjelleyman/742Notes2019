@@ -1,12 +1,19 @@
 \section{Probability}
 This section gives an introduction to some tools and ideas from probability theory. One of the main reasons for including it is that it lets us give background to the final sub-section on Brownian motion, but we'll also use some of the methods from here in the final section of the course on complex networks.
 
-Physical variables can be either continuous or discrete. Continuous variables, like the spatial position of a particle ${\bf r} = (x,y,z);$ $x\rightarrow x+dx$ allow us to apply tools from differential calculus. Discrete variables (like the spin of an electron, the face of a playing card, or the energy level of a quantum particle) require a different approach. As the number of discrete states gets gets large, it is possible to approximate a discrete system by a continuous one. However, there are often statistical reasons why this is not always the best approach. (For one example of why it is not always good to approximate a discrete distribution with a continuous one, see the article ``Power-Law Distributions in Empirical Data'' by Clauset, Shalizi, and Newman, SIAM Review (2009) doi:10.1137/070710111) 
+Physical variables can be either continuous or discrete. Continuous variables, like the spatial position of a particle ${\bf r} = (x,y,z);$ $x\rightarrow x+dx$ allow us to apply tools from differential calculus. Discrete variables (like the spin of an electron, the face of a playing card, or the energy level of a quantum particle) require a different approach. As the number of discrete states gets gets large, it is possible to approximate a discrete system by a continuous one. However, there are often statistical reasons why this is not always the best approach. (For one example of why it is not always good to approximate a discrete distribution with a continuous one, see the article ``Power-Law Distributions in Empirical Data'' \cite{powerlawdist})
 
 Here we are going to look at some simple discrete distributions, including one of the simplest --- the binomial distribution which describes the probability of events that can take one of only two possible outcomes. The tool we will employ to study these distributions is \emph{probability generating functions} (PGFs) (or generating functions for short). Although PGFs can be somewhat cumbersome, they provide a powerful general tool that can applied to a wide range of situations involving discrete probabilities. In this sense they are like the Taylor series of discrete probability.
 
 \subsection{Probability generating functions}
-A probability generating function (PGF) is a polynomial whose coefficients are the probabilities associated with each outcome of some random process.
+\begin{definition}[Probability Generation Function / PGF]
+We call a polynomial $\calG:\mathbb{R}\mapsto\mathbb{R}$ a Probability Generating Function if
+
+$$\calG(x) = \sum_{n=0}^\infty P(X=r_n)x^n$$
+
+where $P(X=r_n)$ is the probability that $X=r_n$.
+\end{definition}
+
 For example, the PGF for an equal probability die is 
 $$\calG(x) = 0x^0+\frac16x^1+\frac16x^2+\frac16x^3+\frac16x^4+\frac16x^5+\frac16x^6.$$
 As an example of how PGFs are a handy general tool, say we now wanted to find the PGF for the sum when we roll two such dice. We can just multiply the PGFs to get $\calG'(x) = \calG(x)\calG(x) = 0x^0 + 0x^1+\frac{1}{36}x^1x^1+\frac{2}{36}x^1x^2+\cdots+\frac{1}{36}x^6x^6.$
@@ -97,11 +104,14 @@ We know that $\langle n\rangle = \calG'(1)=Np=N/2$ and from the expressions for 
 \end{eqnarray*}
 So, $d_{rms}=\sqrt{N}$ and the variance in the net expected outcome scales like $\sqrt{N}$ as $N$ increases. I.e. after $N$ steps we expect to be a rms distance of $\pm \sqrt{N}$ away from the mean of zero.
 
-[You may want to add a figure of this, with N as the independent variable.]
+We can now look at how this would change if the binary process had some small bias $\alpha = |p-q| >0$. In this case, at each step, the expected outcome is $\alpha$ and the bounds for the rms distance from the mean are $\alpha N\pm\sqrt{N}$. See Fig.~\vref{fig:cointoss} for an example.
 
-We can now look at how this would change if the binary process had some small bias $\alpha = |p-q| >0$. In this case, at each step, the expected outcome is $\alpha$ and the bounds for the rms distance from the mean are $\alpha N\pm\sqrt{N}$. 
-
-[You might want to add a figure for this too.]
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{CoinToss}
+    \caption{Long-run probability for a coin toss ($\alpha=0.01$). The shaded regions indicate the region between the rms distances.}
+    \label{fig:cointoss}
+\end{figure}
 
 \subsection{Brownian motion}
 Brownian motion is a model that describes the behaviour of particles in suspension (e.g. of dust in air, fine silt in dirty water) that have some velocity but which are constantly changing direction as they are buffeted by other particles. Their motion can be understood through a calculation similar to that for the net outcome of the binary process above, but in 3D.
