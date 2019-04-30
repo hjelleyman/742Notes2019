@@ -1,4 +1,4 @@
-    \subsection{by Sean Richards}
+    \textbf{Four Degrees of Separation}
     
     The pioneering work of the sociologist Stanley Milgram led to what is now termed the \textit{small world phenomenon}, the idea that any two people on the earth are reachable within at most six steps. When considering connected subsets of people, we can get this down to a smaller number - indeed, in the paper \textit{Four Degrees of Separation} (Backstrom, Boldi, et al)\footnote{http://arxiv.org/abs/1111.4570}, the authors show that, as of January 2012, Facebook has 4.74 degrees of separation between any two active users. The paper can be split into two sections. The first, which we shall discuss only briefly, deals with the technological challenges of analysing subgraphs of the Facebook network. The second deals with the mathematics of networks and network theory; it is the main focus of this essay.
     
@@ -6,7 +6,7 @@
     
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{journals/SR-AverageDegree.png}
+        \includegraphics[width=\textwidth]{SR-AverageDegree.png}
         \caption{Average Degree of each subgraph}
         \label{fig:avdeg}
     \end{figure}
@@ -32,7 +32,7 @@
     
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{journals/SR-AverageDistance.png}
+        \includegraphics[width=\textwidth]{SR-AverageDistance}
         \caption{Average distance for each dataset. Note that the distance for the Facebook set in 2012 is 4.74.}
         \label{fig:avdist}
     \end{figure}
@@ -46,7 +46,7 @@
         The phenomena of small world networks gives rise to scale-free networks. In a scale free network, the network is ergodic. Symbolically, it follows a power law, that is $P_k\propto k^{-\gamma}$ where $\gamma\in\mathbb{R}$. It is known\footnotemark[3] that there are relationships between small-world and scale-free networks, and that networks that can be generated via PAGP algorithms tend to be scale-free\footnotemark[4]. Given that social networks by their very nature are generated with a PAGP model - the so-called \textit{friendship paradox} states that "your friends have more friends than you" - we see that social networks should also obey a power law. Whether they do in practice or not remains an open question.
         \end{minipage}%
         \begin{minipage}{.5\textwidth}\centering
-            \includegraphics[width=\textwidth]{journals/SR-SpidVsDistance.PNG}
+            \includegraphics[width=\textwidth]{SR-SpidVsDistance.PNG}
             \caption{Spid vs. Average Distance (Backstrom, Boldi, et al)}
             \label{fig:avdistspid}
         \end{minipage}

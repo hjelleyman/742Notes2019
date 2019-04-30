@@ -1,6 +1,6 @@
 \section{Ensembles}
 
-For a given macrostate $(N, V, E)$, a statistical system, at any time t, may be in any one of an extremely large number of distinct microstates. As time passes, the system transitions between different microstates, allof which correspond to the same macrostate, with the result that, over a long enough time period the behaviour of the systems is ``averaged'' over the collection of microstates which have been visited by the system.
+For a given macrostate $\Omega=(N, V, E)$, a statistical system, at any time t, may be in any one of an extremely large number of distinct microstates. As time passes, the system transitions between different microstates, all of which correspond to the same macrostate, with the result that, over a long enough time period the behaviour of the systems is ``averaged'' over the collection of microstates which have been visited by the system.
 A useful approach is to consider, at a single instant of time, a large (infinite) number of copies of the same system, existing in all possible microstates that satisfy the macroscopic conditions. Then, we can expect the average behaviour of any system for this collection (or ensemble) to be identical with the time-averaged behaviour of the system. This forms the basis of the so–called ensemble theory.
 
 \subsection{The micro-canonical ensemble}
@@ -99,6 +99,7 @@ You should read through, and understand, section 3.12 of \emph{Statistical Mecha
 
 
 \subsection{A generalised ensemble}
+
 We can follow a similar approach to what we did for the canonical ensemble and generalise to other types of ensembles. Let's start by considering a system $S$ for which we want to specify a fixed value for $f_i$, some intensive variable, with $X_i$ as the conjugate extensive variable ($\frac{\partial S}{\partial X_i}=-\frac{f_i}{T}$). We can do this by putting the system in contact with a reservoir $R$ with which it can exchange $X_i$ such that $X_i = X_i^S+X_i^R$. Now we follow a similar procedure to that for the canonical ensemble:
 \begin{eqnarray*}
 	\langle A \rangle &=& \frac{1}{|\Gamma|}\int_{\Gamma}dx_R dx_S A(x_S)\\
@@ -108,10 +109,10 @@ We can follow a similar approach to what we did for the canonical ensemble and g
 	&=& \frac{1}{Z}\int dx_S A(x_S)\exp\left( \frac{-1}{k} f_i X_i^S(x_S)\right),
 \end{eqnarray*}
 where the partition function $Z$ is given by
-$$
-	Z= \int dx \exp\left( \frac{f_iX_i(x)}{kT} \right).
-$$
-The integral in the partition function can be evaluated via the saddle point method (see the notes about this on Canvas if you want to know more) to get
+\begin{equation}
+	Z= \int dx \exp\left( \frac{f_iX_i(x)}{kT} \right)
+\end{equation}
+The integral in the partition function can be evaluated via the saddle point method (see \href{https://canvas.auckland.ac.nz/courses/40625/files/2902102?module_item_id=604184}{the notes about this on Canvas} if you want to know more) to get
 \begin{equation*}
 	Z \simeq \exp\left(\frac{T^S(X_i^*)+f_iX_i^*}{k_BT}\right),
 \end{equation*}
