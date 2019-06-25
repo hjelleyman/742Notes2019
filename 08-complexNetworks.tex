@@ -55,7 +55,7 @@ These networks span multiple scales, from networks of interactions between prote
 
 \subsection{Properties of networks}
 
-{\bf Small world effect:}
+\subsubsection{Small world effect}
 
 One of the best know network properties is the \emph{small world effect}. This gets it name from a famous experiment in the 1960s by the sociologist Stanley Milgram. In the experiment, letters were passed from person to person until they reached a designated target person. Milgram found that it took on average only about six hops for the letters to reach their destination leading to the so called \emph{six degrees of separation} phenomenon. This small world effect is an example of how particular network structures can provide short paths through the network connecting most pairs of nodes. 
 
@@ -63,9 +63,9 @@ The mean geodesic path length for an undirected network is given by
 $$
 	L =\frac{1}{\frac12 n(n-1)}\sum_{i\geq j} d_{ij}
 $$
-where $d_{ij}$ is the geodesic distance between $v_i$ and $v_j$. In the case of disconnected networks, one must make a choice about how to count the contribution of pairs of nodes that are not connected. The Facebook friendship network is one of the best examples of a small world network. Despite having around 1 billion nodes and 100 billion links (i.e. a mean degree of 100) the mean geodesic distance for the Facebook network is only around four.
+where $d_{ij}$ is the geodesic distance between $v_i$ and $v_j$. In the case of disconnected networks, one must make a choice about how to count the contribution of pairs of nodes that are not connected. The Facebook friendship network is one of the best examples of a small world network. Despite having around 1 billion nodes and 100 billion links (i.e. a mean degree of 100) the mean geodesic distance for the Facebook network is only 4.74.
 
-{\bf Transitivity/clustering:}
+\subsubsection{Transitivity/clustering}
 
 In mathematics, a set with a relationship $\sim$ is transitive if $a \sim b,~b\sim c \implies a \sim c$. In the context of networks the relationship means "is connected to". If a network is entirely transitive, then it would consist of totally connected components. More interesting is to measure how close a network is to being transitive by looking at how much clustering it has.
 
@@ -101,7 +101,7 @@ If we start with a completely regular network (figure \ref{fig1}a) where each no
 \end{figure}
 
 
-{\bf Degree distribution:}
+\subsubsection{Degree distribution}
 
 The degree $k$ of a vertex is the number of edges that connect to that vertex. We write $p_k$ for the fraction of nodes in a network that have degree $k$, this is also the probability that a randomly selected node has degree $k$. One of the interesting properties of real-world networks is the degree distribution --- the histogram of $p_k$ as a function of $k$. For a network with uniformly random connections between nodes, the degree distribution is Poisson. This is not the case for most real-world networks --- these tend to have degree distributions that are highly right-skewed. In particular, many real-world networks tend to have a \emph{heavy-tail} --- a probability distribution that has a non-negligible probability of getting values much greater than the mean. In fact, the mean (and higher order moments like the variance) may not even be well defined for all heavy-tailed distributions.  Of particular interest is the case where the degree distribution is a \emph{power-law} or \emph{scale-free}. That is
 $$

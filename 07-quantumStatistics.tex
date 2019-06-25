@@ -12,7 +12,7 @@ A collection of $N$ classical simple harmonic oscillators is described by the Ha
 \[
 	H(p_i,q_i) = \frac12m\omega^2q_i^2+\frac{1}{2m}p_i^2,\quad i=1,2,3,\ldots,N
 \]
-where $\omega^=\kappa/m$ and $\kappa$ is the spring constant for the oscillators.
+where $\omega=\sqrt{\kappa/m}$ and $\kappa$ is the spring constant for the oscillators.
 
 For a single oscillator, the partition function is given by 
 \[
@@ -37,20 +37,24 @@ and similarly
 The energy per oscillator is therefore $E/N = kT =\langle E_1 \rangle$. This is an example of the \emph{equipartition theorem}.
 
 \subsubsection{The equipartition theorem}
-Assume that:
-\begin{itemize}
-	\item The system is classical. That is $kT>$ is much greater than the spacing between quantum levels.
-	\item	The system includes at least one variable that has a quadratic contribution to the total energy. That is $H(q_i,p_i) =\alpha x^2 +\widetilde{H}(q_i,p_i)$ where $x$ is one of the variables in the set of $\{q_i,p_i\}$ that is not in the $\widetilde{H}$ term.
-\end{itemize}
+\begin{theorem}[Equipartion Theorem]
+    Assume that:
+    \begin{itemize}
+	    \item The system is classical. That is $kT>$ is much greater than the spacing between quantum levels.
+	    \item	The system includes at least one variable that has a quadratic contribution to the total energy. That is $H(q_i,p_i) =\alpha x^2 +\widetilde{H}(q_i,p_i)$ where $x$ is one of the variables in the set of $\{q_i,p_i\}$ that is not in the $\widetilde{H}$ term.
+    \end{itemize}
 Then, $\langle\alpha x^2\rangle = \frac12kT$.
+\end{theorem}
 
-Proof: You do it! Start with $\langle\alpha x^2\rangle = \frac{\int \mathrm{d}p\mathrm{d}q \exp(-\beta H)\alpha x^2}{\int \mathrm{d}p\mathrm{d}q \exp(-\beta H)}$.
+\begin{proof}
+    Exercise. \textbf{Hint: } Start with $\langle\alpha x^2\rangle = \frac{\int \mathrm{d}p\mathrm{d}q \exp(-\beta H)\alpha x^2}{\int \mathrm{d}p\mathrm{d}q \exp(-\beta H)}$
+\end{proof}
 
 The consequence of the equipartition theorem is that when a system is in thermal equilibrium, each variable has a quadratic term only in $H$ and contributes $kT/2$ towards the total energy $E$. Therefore, for a system of $N$ harmonic oscillators the total energy is $NkT$, since each oscillator has a quadratic term for both the kinetic and potential terms.
 
 Now, let's consider a quantum harmonic oscillator where $\omega$ can take only discrete values. The energy eigenvalues of the oscillator are $\epsilon_n = (n+\frac12)\hbar\omega$, $n=0,1,2,\ldots$. The Hamiltonian for a single oscillator is therefore given by
 \[
-	Z_1 = \Sigma_{n=0,1,2,\ldots}\exp(-\beta H) =  \Sigma_{n=0,1,2,\ldots}\exp(-\beta(n+\frac12\hbar\omega)) = \frac{\exp(-\beta\hbar\omega/2))}{1-\exp(-\beta\hbar\omega))}
+	Z_1 = \sum_{n=0,1,2,\ldots}\exp(-\beta H) =  \sum_{n=0,1,2,\ldots}\exp(-\beta(n+\frac12\hbar\omega)) = \frac{\exp(-\beta\hbar\omega/2))}{1-\exp(-\beta\hbar\omega))}
 \] 
 where the last equality comes from treating the sum as a geometric series.
 From this, we have
@@ -85,7 +89,7 @@ so the mean energy approaches the ground state, or zero point energy. [A more ac
 
 \subsection{Quantum statistical mechanics of non-interacting particles}
 
-In quantum mechanics we already have two layers of uncertainty about the state of a system: the Heisenberg uncertain principle $\Delta{p}\Delta {r}>{\hbar}/{2}$ means that rather than having a discrete point in phase space to describe the state of a system, the most precision we can hope for is some small region in phase space, centered on that point. Quantum mechanics also deals with probability distributions itself: the wave function $\psi_n({\bf r})$ (or rather $|\psi_n|^2$) describes the probability distribution of a particle being in a particular quantum state.
+In quantum mechanics we already have two layers of uncertainty about the state of a system: the Heisenberg uncertainty principle $\Delta{p}\Delta {r}>{\hbar}/{2}$ means that rather than having a discrete point in phase space to describe the state of a system, the most precision we can hope for is some small region in phase space, centered on that point. Quantum mechanics also deals with probability distributions itself: the wave function $\psi_n({\bf r})$ (or rather $|\psi_n|^2$) describes the probability distribution of a particle being in a particular quantum state.
 
 Statistical mechanics adds an extra layer of probability to this situation in order to deal with ensembles that have probabilities $p_n$ of being in a variety of quantum states $\psi_n$. These quantum ensembles are called \emph{mixed states}. They are distinct from the superposition of quantum states. The superposition of two wave functions implies that the system is in a state comprised of both wave functions simultaneously, while the mixed state says that the system could be in one state or the other, or perhaps both. For example: if $\ket{H}$
 is the wave function for a horizontally polarized photon and $\ket{V}$ is the wave function for a vertically polarised photon, then the superposition $\frac{1}{\sqrt{2}}(\ket{H}+\ket{V})$ is a diagonally polarised photon, while the mixed state is an unpolarised photon that is half $\ket{H}$ and half $\ket{V}$ that could be in either state:  i.e. $\frac12\left(\ket{H}\bra{H}+\ket{V}\bra{V}\right)$.
@@ -144,17 +148,17 @@ $$
 Bra-ket notation has a number of convenient properties; one that we will make use of shortly is that closed bra-ket sets commute with each other. This is easy to see by considering the vector case where a closed bra-ket pair is just a scalar.
 
 \subsubsection*{The density matrix/density operator}
-Similar to the way that the single particle density is a convenient way of introducing a probability density into classical statistical mechanics, the density matrix $\rho = \sum_n p_n\ket{\psi_n}\bra{\psi_n}$ (or the density operator $\hat{rho}$ in the case of functions) allows us to consider a probability distribution over an ensemble of quantum states.
+Similar to the way that the single particle density is a convenient way of introducing a probability density into classical statistical mechanics, the density matrix $\rho = \sum_n p_n\ket{\psi_n}\bra{\psi_n}$ (or the density operator $\hat{\rho}$ in the case of functions) allows us to consider a probability distribution over an ensemble of quantum states.
 
 To see how the density matrix arises, we will begin with the expression we had earlier for the ensemble expectation of an observable corresponding to some operator $\hat{A}$, which we can now write in bra-ket notation.
 \begin{equation}
 	\langle\hat{A}\rangle = \sum_n p_n\bra{\psi_n}\hat{A}\ket{\psi_n}.
 	\label{eq:7.2}
 \end{equation}
-(We are going to assume throughout this section that all the vectors/wave functions that we deal with have already been normalised.) Now, if $\phi_a$ is any orthonormal basis then the identity operator is
-$$
-	Id = \sum_a\ket{\phi_a}\bra{\phi_a}.
-$$
+(We are going to assume throughout this section that all the vectors/wave functions that we deal with have already been normalised.) Now, if $\phi_a$ is any orthonormal basis then the identity operator (in some texts, and in 703, this is called the \textit{closure} or completeness relation) is
+\begin{equation}
+	1 = \sum_a\ket{\phi_a}\bra{\phi_a}
+\end{equation}
 If we insert this into equation (\ref{eq:7.2}) for the expected value of $\hat{A}$ we get
 \begin{eqnarray*}
 	\langle\hat{A}\rangle &=& \sum_n p_n\bra{\psi_n} \left(\sum_a\ket{\phi_a}\bra{\phi_a}\right) |\hat{A}\ket{\psi_n}\\
